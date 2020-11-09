@@ -38,7 +38,7 @@ router.post('/projects', (req, res) => {
       res.status(201).json(project);
     })
     .catch((err) => {
-      res.status(500).json({ message: 'Failed to create new project' });
+      res.status(500).json({ error: err.message });
     });
 });
 
@@ -61,7 +61,7 @@ router.post('/tasks', (req, res) => {
       res.status(201).json(task);
     })
     .catch((err) => {
-      res.status(500).json({ message: 'Failed to create new task' });
+      res.status(500).json({ error: err.message });
     });
 });
 router.get('/:id/tasks', (req, res) => {

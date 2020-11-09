@@ -21,7 +21,7 @@ module.exports = {
   },
   findTasks(id) {
     return db('tasks as t')
-      .join('projects as p', 't.id', 'p.task_id')
+      .join('projects as p', 't.id', 'p.project_name')
       .select('p.project_name', 'p.description')
       .where({ 't.id': id });
   },

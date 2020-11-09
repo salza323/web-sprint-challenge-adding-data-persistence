@@ -4,22 +4,6 @@ exports.up = function (knex) {
     tbl.string('project_name', 128).notNullable();
     tbl.string('description', 128);
     tbl.boolean('completed').defaultTo(0);
-    tbl
-      .integer('resource_id')
-      .unsigned()
-      .notNullable()
-      .references('id')
-      .inTable('resources')
-      .onUpdate('CASCADE')
-      .onDelete('CASCADE');
-    tbl
-      .integer('task_id')
-      .unsigned()
-      .notNullable()
-      .references('id')
-      .inTable('tasks')
-      .onUpdate('CASCADE')
-      .onDelete('CASCADE');
   });
 };
 
